@@ -20,11 +20,14 @@ include 'includes/header.php';
 											<label for="first_name">First name:</label>
 												<input type="text" class="form-control" name="first_name" placeholder="Enter First Name">
 											</div><!--End of form-group-->
-											<div class="error"><?php echo $errors['patient-name'] ?></div>
+											<div class="error"><?php echo $errors['first-name-length'] ?></div>
+											<div class="error"><?php echo $errors['first-name-check'] ?></div>
 										<div class="form-group">
 											<label for="last_name">Last name:</label>
 												<input type="text" class="form-control" name="last_name" placeholder="Enter Last Name">
 										</div><!--End of form-group-->
+										<div class="error"><?php //echo $errors['last-name-length'] ?></div>
+										<div class="error"><?php echo $errors['last-name-check'] ?></div>
 									<div class="form-group">
 										<label for="doctor">Doctor:</label>
 										<div class="dropdown">
