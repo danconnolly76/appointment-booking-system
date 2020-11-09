@@ -3,14 +3,22 @@
 <?php
 include 'includes/header.php';
 ?>
-</body>
+<body>
 <header>
+<?php
+include 'includes/navbar.php';
+?>
 </header>
 <main>
+<?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+?>
 	  <div class="padding_class">
     		<div class="container">
      			<div class="row">
-	  				<div class="col-md-8 col-md-offset-2">
+	  				<div class="col col-sm-8 col-sm-offset-2">
 		     			<div class="panel panel-default">
             				<div class="panel-heading">Create Appointment</div>
                					 <div class="panel-body">
@@ -26,7 +34,7 @@ include 'includes/header.php';
 											<label for="last_name">Last name:</label>
 												<input type="text" class="form-control" name="last_name" placeholder="Enter Last Name">
 										</div><!--End of form-group-->
-										<div class="error"><?php //echo $errors['last-name-length'] ?></div>
+										<div class="error"><?php echo $errors['last-name-length'] ?></div>
 										<div class="error"><?php echo $errors['last-name-check'] ?></div>
 									<div class="form-group">
 										<label for="doctor">Doctor:</label>

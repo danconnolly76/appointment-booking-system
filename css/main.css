@@ -1,28 +1,8 @@
-body{
+body {
 	background-color:#DEEFF5;
 }
 
-.maincontainer{
-  overflow: hidden;
-  line-height: 10px;
-}
-
-.maincontent{
-  background-color: #ffffff;
-  padding: 30px 0px;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 5px; 
-  margin-bottom: 5px;
-  width: 50%;
- 
-}
-
-.bold{
-  font-weight: bold;
-}
-
-.footer{
+.footer {
    position: fixed;
    left: 0;
    bottom: 0;
@@ -34,23 +14,14 @@ body{
    text-align: center;
 }
 
-.dropdown-list{
-  position: relative;
-  font-family: Arial;
+@media only screen and (max-width: 576px){
+  .footer {
+    padding: 6% 2% 6% 2%;
+  }
 }
 
-.content{
-  padding-bottom: 15%; 
-}
-
-.table_container{
-  padding: 2% 5% 10% 5%;
-}
-
-.padding_class{
-  padding: 0% 5% 15% 5%;
-}
-
-.text_box{
-  padding: 0% 0% 5% 0%;
+@media only screen and (max-width: 575px){
+  .padding_class{
+    margin-bottom: 120px;
+  }
 }
