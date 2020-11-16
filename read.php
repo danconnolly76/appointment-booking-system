@@ -1,4 +1,6 @@
 <?php
-header('Cache-Control: no cache');
-echo 'This is the Read Page';	 
+include "models/appointment-model.php";
+$apps = Appointment::getAllAppointments();
+
+include "views/read-appointment-view.php";
 ?>

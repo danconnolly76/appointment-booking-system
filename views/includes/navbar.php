@@ -11,7 +11,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home Page</a></li> 
-		<li><a href="create.php">Appointment</a></li> 
+		    <li><a href="create.php">Appointment</a></li>
+        <li><a href="read.php">Read Page</a></li>
       </ul>
          <form class="navbar-form navbar-left" action="search_appointment.php" method="POST">
             <div class="form-group">

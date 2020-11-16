@@ -24,7 +24,7 @@ public static function createAppointment($first_name, $last_name, $doctor, $date
 public static function getAllAppointments()
 {
     $conn = Connection::getConnection();
-    $sqlQuery = $conn->prepare("SELECT * FROM appointments ORDER BY appointment.date ASC, appointment.time ASC");
+    $sqlQuery = $conn->prepare("SELECT * FROM appointments ORDER BY appointments.date ASC, appointments.time ASC");
     $sqlQuery->execute();
     $app = $sqlQuery->fetchAll();
     Connection::closeConnection($conn);
