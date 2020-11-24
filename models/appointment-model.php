@@ -52,13 +52,14 @@ public static function getAppointmentById($appointmentId)
     Connection::closeConnection($conn);
     return $appointment;
 }
-public static function updateAppointment($id, $patient_name, $doctor, $date, $time, $comment)
+public static function updateAppointment($id, $first_name, $last_name, $doctor, $date, $time, $comment)
 {
     $conn = Connection::getConnection();
-    $sqlQuery="UPDATE appointments SET patient_name=:patient_name, doctor=:doctor, date=:date, time=:time, comment=:comment WHERE id=:id";
+    $sqlQuery="UPDATE appointments SET first_name=:first_name, last_name=:last_name, doctor=:doctor, date=:date, time=:time, comment=:comment WHERE id=:id";
     $update=$conn->prepare($sqlQuery);
     $update->bindValue(':id', $id);
-    $update->bindValue(':patient_name', $patient_name);
+    $update->bindValue(':first_name', $first_name);
+    $update->bindValue(':last_name', $last_name);
     $update->bindValue(':doctor', $doctor);
     $update->bindValue(':date', $date);
     $update->bindValue(':time', $time);

@@ -46,7 +46,7 @@ include "includes/navbar.php";
                   </td>
                   <td>
                      <a href='delete.php?id=<?php echo $appointment["id"];?>' class="btn btn-sm btn-danger pull-right" name="cancel_button">Cancel</a>
-                     <a href='edit_appointment.php?id=<?php echo $appointment["id"];?>' class="btn btn-sm btn-warning pull-right">Update</a>
+                     <a href='edit.php?id=<?php echo $appointment["id"];?>' class="btn btn-sm btn-warning pull-right">Update</a>
                    <a href='appointment_details.php?id=<?php echo $appointment["id"];?>' class="btn btn-sm btn-primary pull-right">Read</a>
                   </td>
                 </tr>
