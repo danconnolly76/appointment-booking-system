@@ -4,9 +4,12 @@
 <?php
   include('includes/header.php')
 ?>
+<body>
 <header>
-  </header>
-	<body>
+<?php
+include 'includes/navbar.php';
+?>
+</header>
 <main>
   <div class="padding_class">
     <div class="container">
