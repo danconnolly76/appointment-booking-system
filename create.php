@@ -1,4 +1,5 @@
 <?php
+include_once "helpers/auth.php";
 include 'models/doctor-model.php';
 include 'models/appointment-model.php';
 $errors = array('emptyboxes'=>'', 'first-name-length'=>'', 'first-name-check'=>'', 'last-name-length'=>'', 'last-name-check'=>'');

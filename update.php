@@ -1,4 +1,5 @@
 <?php
+include_once "helpers/auth.php";
 include_once "models/appointment-model.php";
 if(isset($_POST['update_button']))
 {
