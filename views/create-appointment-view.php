@@ -10,18 +10,14 @@ include 'includes/navbar.php';
 ?>
 </header>
 <main>
-<?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-?>
-	  <div class="padding_class">
+<br>
+	  <div class="padding_class pb-5">
     		<div class="container">
-     			<div class="row">
-	  				<div class="col col-sm-8 col-sm-offset-2">
-		     			<div class="panel panel-default">
-            				<div class="panel-heading">Create Appointment</div>
-               					 <div class="panel-body">
+     			<div class="row justify-content-center">
+	  				<div class="col col-sm-8">
+		     			<div class="card">
+            				<div class="card-header">Create Appointment</div>
+               					 <div class="card-body">
 									<div class="error"><?php echo $errors['emptyboxes'] ?></div>
 									<form action="" method="post" id="form">    
 										<div class="form-group">
@@ -70,6 +66,7 @@ error_reporting(E_ALL);
 			</div><!--End of container-->
 		</div>
 </main>
+<br>
 <?php
 include 'includes/footer.php';
 ?>

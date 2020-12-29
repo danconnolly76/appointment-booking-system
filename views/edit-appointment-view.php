@@ -11,13 +11,14 @@ include 'includes/navbar.php';
 ?>
 </header>
 <main>
-  <div class="padding_class">
+	<br>
+  <div class="padding_class pb-5">
     <div class="container">
-     <div class="row">
-	  <div class="col-md-8 col-md-offset-2">
-		    <div class="panel panel-default">
-          <div class="panel-heading">Update Appointment</div>
-            <div class="panel-body">
+     <div class="row justify-content-center">
+	  <div class="col col-sm-8">
+		    <div class="card">
+          <div class="card-header">Update Appointment</div>
+            <div class="card-body">
 	   <form  action="update.php" method="post">
 		   <input type="hidden" name="id" value="<?php echo $appointment["id"]; ?>">  
 		  <div class="form-group">
@@ -62,7 +63,7 @@ include 'includes/navbar.php';
 		</div><!--End of container-->
 		</div>
 </main>
-
+<br>
 <?php
   include('includes/footer.php')
 ?>

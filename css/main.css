@@ -1,7 +1,6 @@
 body {
 	background-color:#DEEFF5;
 }
-
 .footer {
    position: fixed;
    left: 0;
@@ -13,13 +12,14 @@ body {
    padding-bottom: 3%;
    text-align: center;
 }
-
 @media only screen and (max-width: 576px){
   .footer {
     padding: 6% 2% 6% 2%;
   }
 }
-
+.padding_class{
+  margin-bottom: 100px;
+}
 @media only screen and (max-width: 575px){
   .padding_class{
     margin-bottom: 120px;
