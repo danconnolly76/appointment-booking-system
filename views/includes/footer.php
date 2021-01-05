@@ -6,12 +6,13 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Enter your contact details</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Enter Doctors name</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
+            <div class="error"><?php echo $errors['emptyboxes'] ?></div>
                 <form action="" method="POST" name="registration" id="newModalForm">
                 <div class="form-group">
                       <div class="dropdown">
@@ -24,14 +25,14 @@
                       </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" required/>
+                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name"/>
                 </div>
-                
                 <div class="form-group">
-                    <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" required/>
+                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name"/>
                 </div>
-  
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                <div class="form-group">
+							   <input type="submit" name="doctor" class="btn btn-lg btn-success btn-block" value="Submit">
+							</div>
                 </form>
             </div>
           </div>

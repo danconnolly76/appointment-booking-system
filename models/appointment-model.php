@@ -6,16 +6,19 @@ class Appointment {
   */
 public static function createAppointment($first_name, $last_name, $doctor, $date, $time, $comment)
 {
-    $sqlQuery = 'INSERT INTO appointments (first_name, last_name, doctor, date, time, comment) VALUES (:first_name, :last_name, :doctor, :date, :time, :comment)';
-    $stmt = Connection::getConnection()->prepare($sqlQuery);
-    $stmt->bindValue(':first_name', $first_name);
-    $stmt->bindValue(':last_name', $last_name);
-	$stmt->bindValue(':doctor', $doctor);
-	$stmt->bindValue(':date', $date);
-	$stmt->bindValue(':time', $time); 
-	$stmt->bindValue(':comment', $comment);
-    $rows = $stmt->execute();
-	//Connection::closeConnection($conn);
+    $conn = Connection::getConnection();
+    $sqlQuery = 'INSERT INTO appointments (first_name, last_name, doctor, date, time, comment) VALUES (?, ?, ?, ?, ?, ?)';
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+    $stmt=$conn->prepare($sqlQuery);
+    $stmt->bindParam(1, $first_name);
+    $stmt->bindParam(2, $last_name);
+	$stmt->bindParam(3, $doctor);
+	$stmt->bindParam(4, $date);
+	$stmt->bindParam(5, $time); 
+	$stmt->bindParam(6, $comment);
+    $stmt->execute();
+    Connection::closeConnection($conn);
+    return $stmt;
 }
 /*
  * This function retrieves all appoinments from a database and orders them

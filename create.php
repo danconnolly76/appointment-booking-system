@@ -43,6 +43,15 @@ if(isset($_POST['appointment_button']))
 
 	}	
 }
+if(isset($_POST['doctor']))
+{
+    $title = $_POST['title'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+
+    Doctor::addDoctor($title, $firstname, $lastname);
+
+}
 function validate_form($data) {
     $data = trim($data);
     $data = stripslashes($data);

@@ -15,7 +15,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#footerFormModal">Add Doctor</a>
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#footerFormModal">Model</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>
