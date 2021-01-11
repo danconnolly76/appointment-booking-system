@@ -58,7 +58,7 @@ include "includes/navbar.php";
     </div>
    </main> 
    <?php
-  include('includes/footer.php')
+  include "includes/footer.php";
   ?>
    </body>
 </html> 

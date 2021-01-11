@@ -12,7 +12,6 @@
               </button>
             </div>
             <div class="modal-body">
-            <div class="error"><?php echo $errors['emptyboxes'] ?></div>
                 <form action="" method="POST" name="registration" id="newModalForm">
                 <div class="form-group">
                       <div class="dropdown">

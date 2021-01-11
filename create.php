@@ -1,6 +1,9 @@
 <?php
+header('Cache-Control: no cache');
+session_cache_limiter('private_no_expire'); 
 include_once "helpers/auth.php";
-include 'models/doctor-model.php';
+//include 'models/doctor-model.php';
+include 'controller/doctorController.php';
 include 'models/appointment-model.php';
 $errors = array('emptyboxes'=>'', 'first-name-length'=>'', 'first-name-check'=>'', 'last-name-length'=>'', 'last-name-check'=>'');
 $docs = Doctor::getAllDoctors();
@@ -43,14 +46,13 @@ if(isset($_POST['appointment_button']))
 
 	}	
 }
+$controller_object = new DoctorController; 
 if(isset($_POST['doctor']))
 {
-    $title = $_POST['title'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-
-    Doctor::addDoctor($title, $firstname, $lastname);
-
+    $title = !empty($_POST['title']) ? $_POST['title'] : '';
+    $firstname = !empty($_POST['firstname']) ? $_POST['firstname'] : '';
+    $lastname = !empty($_POST['lastname']) ? $_POST['lastname'] : '';
+    $controller_object->validationCheck($title, $firstname, $lastname); 
 }
 function validate_form($data) {
     $data = trim($data);

@@ -1,21 +1,17 @@
 <?php
+header('Cache-Control: no cache');
+session_cache_limiter('private_no_expire'); 
 include_once "helpers/auth.php";
 include "models/appointment-model.php";
-include 'models/doctor-model.php';
-$errors = array('emptyboxes'=>'', 'invalid_firstname'=>'', 'invalid_lastname'=>'');
+include 'controller/doctorController.php';
 $apps = Appointment::getAllAppointments();
+$controller_object = new DoctorController; 
 if(isset($_POST['doctor']))
 {
     $title = $_POST['title'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
-    if(empty($title) || empty($firstname) || empty($lastname)){
-        $errors['emptyboxes'] = 'Must fill out all boxes';
-    } else if(!preg_match("/^[a-zA-Z\s]+$/", $firstname)){
-        header('Location: read.php?=invalidFirstName');
-    } else {
-        Doctor::addDoctor($title, $firstname, $lastname);  
-    }
+    $controller_object->validationCheck($title, $firstname, $lastname);  
 }
 include "views/read-appointment-view.php";
 ?>
