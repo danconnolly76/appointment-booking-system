@@ -8,12 +8,13 @@ class Doctor {
    public static function getAllDoctors()
    {
        $conn = Connection::getConnection();
-       $sqlQuery = $conn->prepare("SELECT * FROM doctors");
-       $sqlQuery->execute();
-       $doctors =  $sqlQuery->fetchAll();
+       $sqlQuery = "SELECT * FROM doctors";
+       $result = $conn->query($sqlQuery);
+       $doctors = $result->fetchAll();
        Connection::closeConnection($conn);
 	     return $doctors;
    }
+
    /*
     * This function inserts doctors into a database.
     */
@@ -28,7 +29,23 @@ class Doctor {
       $stmt->bindValue(':lastname', $lastname);
       $stmt->execute();
       Connection::closeConnection($conn);
-      return $stmt;
     }
-}	
+
+    /*
+     * This function allows doctors to be deleted from the database
+     */
+    public static function deleteDoctor($doctorId)
+    {
+      $conn = Connection::getConnection();
+      $sqlQuery = $conn->prepare("DELETE FROM doctors WHERE id = :id");
+      $sqlQuery->bindValue(':id',$doctorId);
+      $rows=$sqlQuery->execute();
+      Connection::closeConnection($conn);
+      if($rows==1){
+        return true;
+      }
+      return false;
+    }
+
+}
 ?>

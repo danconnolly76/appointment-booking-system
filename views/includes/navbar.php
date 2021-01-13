@@ -14,8 +14,11 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target=".example-modal-lg">Remove Doctor</a>
+      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#footerFormModal">Model</a>
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#footerFormModal">Add Doctor</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>

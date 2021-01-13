@@ -36,7 +36,7 @@ include 'includes/navbar.php';
 										<label for="doctor">Doctor:</label>
 										<div class="dropdown">
 												<select id="doctor" class="form-control" name="doctor">
-													<?php foreach ($docs as $doctor) { ?>
+													<?php foreach ($doctors as $doctor) { ?>
 														<option value='<?php echo $doctor["firstname"]." ".$doctor["lastname"] ?>'><?php echo $doctor["title"]." ".$doctor["firstname"]." ".$doctor["lastname"] ?></option>
 													<?php } ?>
 												</select>

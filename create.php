@@ -2,11 +2,10 @@
 header('Cache-Control: no cache');
 session_cache_limiter('private_no_expire'); 
 include_once "helpers/auth.php";
-//include 'models/doctor-model.php';
 include 'controller/doctorController.php';
 include 'models/appointment-model.php';
 $errors = array('emptyboxes'=>'', 'first-name-length'=>'', 'first-name-check'=>'', 'last-name-length'=>'', 'last-name-check'=>'');
-$docs = Doctor::getAllDoctors();
+$doctors = Doctor::getAllDoctors();
  /*
   * Checks to see if submit button set and if textboxes are empty.
   * Checks first and last name for string length and character input with regular expression.
@@ -46,13 +45,14 @@ if(isset($_POST['appointment_button']))
 
 	}	
 }
-$controller_object = new DoctorController; 
+$controllerObject = new DoctorController;
 if(isset($_POST['doctor']))
 {
-    $title = !empty($_POST['title']) ? $_POST['title'] : '';
-    $firstname = !empty($_POST['firstname']) ? $_POST['firstname'] : '';
-    $lastname = !empty($_POST['lastname']) ? $_POST['lastname'] : '';
-    $controller_object->validationCheck($title, $firstname, $lastname); 
+    $title = $_POST['title'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+   
+    $controllerObject->validationCheck($title, $firstname, $lastname); 
 }
 function validate_form($data) {
     $data = trim($data);
